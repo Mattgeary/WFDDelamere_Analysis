@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521102127261.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D1FA6AA1",
+    "lastKnownWriteTime" : 7305790112001258601,
+    "last_content_update" : 1521102127261,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "549B2E5A",
+        "caption" : "capt.hist1",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=capt.hist1&cache_key=549B2E5A",
+        "displayedObservations" : "26",
+        "environment" : "",
+        "object" : "capt.hist1",
+        "preview" : "0",
+        "totalObservations" : "26",
+        "variables" : "2"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

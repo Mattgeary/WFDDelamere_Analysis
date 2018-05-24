@@ -1,0 +1,5 @@
+"0","```r
+zst <- apply(WFD.occu.mat, 1, max, na.rm = TRUE)
+zst[zst == \"-Inf\"] <- 1
+inits <- function(){list(z = zst)}
+```"

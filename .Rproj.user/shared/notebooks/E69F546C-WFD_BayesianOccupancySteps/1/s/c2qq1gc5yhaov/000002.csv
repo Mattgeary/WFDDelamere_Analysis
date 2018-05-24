@@ -1,0 +1,4 @@
+"0","```r
+WFD.occu.4 <- occu(~1 ~ AWI + standingwater + pet_emerge, WFD.UMF)
+summary(WFD.occu.4)
+```"

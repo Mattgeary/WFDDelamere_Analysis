@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1527164296349.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3464253073",
+    "id" : "DA451FF7",
+    "lastKnownWriteTime" : 1527167632,
+    "last_content_update" : 1527167633082,
+    "path" : "~/Dropbox/WFDDelamere_Analysis/WFD_FW_Moss.Rmd",
+    "project_path" : "WFD_FW_Moss.Rmd",
+    "properties" : {
+        "cursorPosition" : "17,386",
+        "scrollLine" : "18"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

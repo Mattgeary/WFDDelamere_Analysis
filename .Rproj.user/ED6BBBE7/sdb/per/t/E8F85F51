@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(raster)\n\nukgrid = \"+init=epsg:27700\"\nfenn.ext <- extent(c(348000, 350000, 335000, 337000))\n\nmoss <- raster(as.matrix(read.csv(\"Fenns_Moss.csv\", header = FALSE)), crs = crs(ukgrid))\nextent(moss) <- fenn.ext               \nwriteRaster(moss, \"Fenns_moss.img\", overwrite = TRUE)\n\nscrub <- raster(as.matrix(read.csv(\"Fenns_Scrub.csv\", header = FALSE)), crs = crs(ukgrid))\nextent(scrub) <- fenn.ext               \nwriteRaster(scrub, \"Fenns_scrub.img\", overwrite = TRUE)\n\nscrubMoss <- raster(as.matrix(read.csv(\"Fenns_ScrubMoss.csv\", header = FALSE)), crs = crs(ukgrid))\nextent(scrubMoss) <- fenn.ext               \nwriteRaster(scrubMoss, \"Fenns_scrubmoss.img\", overwrite = TRUE)\n\nwater <- raster(as.matrix(read.csv(\"Fenns_Water.csv\", header = FALSE)), crs = crs(ukgrid))\nextent(water) <- fenn.ext               \nwriteRaster(water, \"Fenns_water.img\", overwrite = TRUE)\n\nwood <- raster(as.matrix(read.csv(\"Fenns_Wood.csv\", header = FALSE)), crs = crs(ukgrid))\nextent(wood) <- fenn.ext               \nwriteRaster(wood, \"Fenns_wood.img\", overwrite = TRUE)\n\n\n\n",
+    "created" : 1520288977181.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4032574403",
+    "id" : "E8F85F51",
+    "lastKnownWriteTime" : 1507301190,
+    "last_content_update" : 1507301190,
+    "path" : "~/Dropbox/Research/Dragonfly/White-faced Darter/WFDDelamere/WFDDelamere_Analysis/FW_hab/Fenns_habitat.R",
+    "project_path" : "FW_hab/Fenns_habitat.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

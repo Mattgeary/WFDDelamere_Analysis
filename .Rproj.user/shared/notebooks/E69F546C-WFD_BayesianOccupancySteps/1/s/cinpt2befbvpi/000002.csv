@@ -1,0 +1,4 @@
+"0","```r
+WFD.occu.b <- jags(WFD.jags.dat, inits, params, model.file = WFD.jg, n.chains = nc, n.thin = nt, n.iter = ni, n.burnin = nb)
+print(WFD.occu.b, dig = 3)
+```"

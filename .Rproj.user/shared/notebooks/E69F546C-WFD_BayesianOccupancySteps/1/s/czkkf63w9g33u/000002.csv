@@ -1,0 +1,5 @@
+"0","```r
+WFD.occu <- occu(~1 ~1, WFD.UMF)
+summary(WFD.occu)
+
+```"

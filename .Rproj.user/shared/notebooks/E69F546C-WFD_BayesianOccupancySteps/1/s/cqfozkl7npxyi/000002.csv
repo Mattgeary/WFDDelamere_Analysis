@@ -1,0 +1,4 @@
+"0","```r
+plot(WFD.occu.b)
+traceplot(WFD.occu.b)
+```"

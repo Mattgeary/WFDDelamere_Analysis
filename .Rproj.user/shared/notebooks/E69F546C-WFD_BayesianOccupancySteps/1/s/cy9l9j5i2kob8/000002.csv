@@ -1,0 +1,14 @@
+"0","```r
+#### Build UMF using data from csv files
+## Read in data
+WFD.occu.mat <- read.csv(\"Data/WFDHighland_wide_UMF.csv\")[,2:17]
+
+# Read in site and observation covariates
+WFD.siteCovs <- read.csv(\"Data/EnvVars.csv\")
+
+WFD.obsCovs <- read.csv(\"Data/WFDObsCov.csv\")
+#WFD.obsCovs <- list(tmax=WFD.obsCovs[-c(WFD.blank.rows),1:16], tmin=WFD.obsCovs[-c(WFD.blank.rows),17:32], af=WFD.obsCovs[-c(WFD.blank.rows),33:48], rain=WFD.obsCovs[-c(WFD.blank.rows),49:64], sun=WFD.obsCovs[-c(WFD.blank.rows),65:80])
+
+WFD.UMF <- unmarkedFrameOccu(y = WFD.occu.mat, siteCovs = WFD.siteCovs, obsCovs = WFD.obsCovs)
+
+```"

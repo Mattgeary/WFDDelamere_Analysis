@@ -1,0 +1,20 @@
+"0","```r
+## Read in data
+WFD.occu.mat <- read.csv(\"Data/WFDHighland_wide_UMF.csv\")[,2:17]
+
+# Read in site and observation covariates
+WFD.siteCovs <- read.csv(\"Data/EnvVars.csv\")
+
+
+# # Find and remove observations where GIS data is NA
+GIS.NA <- which(is.na(WFD.siteCovs$AWI))
+WFD.siteCovs <- WFD.siteCovs[-c(GIS.NA),]
+WFD.occu.mat <- WFD.occu.mat[-c(GIS.NA),]
+# 
+GIS.NA <- which(is.na(WFD.siteCovs$pet_emerge))
+WFD.siteCovs <- WFD.siteCovs[-c(GIS.NA),]
+WFD.occu.mat <- WFD.occu.mat[-c(GIS.NA),]
+
+sC.scale <- scale(WFD.siteCovs)
+WFD.siteCovs <- data.frame(scale(WFD.siteCovs)) 
+```"

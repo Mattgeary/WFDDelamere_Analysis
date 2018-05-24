@@ -1,0 +1,57 @@
+"0","```r
+WFD.multistate.cov.jg <- function(){
+  # Priors
+  p2 ~ dunif(0, 1)
+  r ~ dunif(0, 1)
+  mean.psi ~ dunif(0,1)
+  beta0 <- logit(mean.psi)
+  beta1 ~ dunif(-20, 20)
+  beta2 ~ dunif(-20, 20)
+  beta3 ~ dunif(-20, 20)
+  
+  for(i in 1:3){
+    alpha[i] ~ dgamma(1, 1) #Induce Drichlet prior
+    p3[i] <- alpha[i]/sum(alpha[])
+  }
+  # Define state vector
+  for(s in 1:M){
+    phi[s, 1] <- 1 - psi[s]      # Prob of non-occupation
+    phi[s, 2] <- psi[s] * (1- r) # Prob of occupancy without repro
+    phi[s, 3] <- psi[s] * r      # Prob of occupancy and repro
+    logit(psi[s]) <- beta0 + beta1 * AWI[s] + beta2 * pet_emerge[s] + beta3 * standingwater[s]
+  }
+  # Define observation matrix
+  # Order of indices - true state, time, observed state
+  for(j in 1:J){
+    p[1,j,1] <- 1
+    p[1,j,2] <- 0
+    p[1,j,3] <- 0
+    p[2,j,1] <- 1 - p2
+    p[2,j,2] <- p2
+    p[2,j,3] <- 0
+    p[3,j,1] <- p3[1]
+    p[3,j,2] <- p3[2]
+    p[3,j,3] <- p3[3]
+  }
+  # State-space likelihood
+  # State equation model of true states (z)
+  for(t in 1:M){
+    z[t] ~ dcat(phi[t,])
+  }
+  # Observation equation
+  for(m in 1:M){
+    for(q in 1:J){
+      y[m, q] ~ dcat(p[z[m], q, ])# Error here? Dimensions of two objects are
+    }
+  }
+  # Derived quantities
+  for(s in 1:M){
+    occ1[s] <- equals(z[s], 1)
+    occ2[s] <- equals(z[s], 2)
+    occ3[s] <- equals(z[s], 3)
+  }
+n.occ[1] <- sum(occ1[]) # Sites in state 1
+n.occ[2] <- sum(occ2[]) # Sites in state 2
+n.occ[3] <- sum(occ3[]) # Sites in state 3
+}
+```"

@@ -1,0 +1,32 @@
+"0","```r
+WFD.site.jg <- function(){
+# Priors
+  mean.p ~ dunif(0,1)         # Detection of intercept on prob.scale
+  alpha0 <- logit(mean.p)
+  mean.psi ~ dunif(0,1)  # Occupancy intercept on prob.scale
+  beta0 <- logit(mean.psi)    # Occupancy intercept
+  beta1 ~ dunif(-20,20)      # Occupancy slope on AWI
+  beta2 ~ dunif(-20,20)      # Occupancy slope on pet_emerge
+  beta3 ~ dunif(-20,20)      # Occupancy slope on standingwater
+  
+#Likelihood
+  for(i in 1:M){                # Loop over sites
+    # True state for the partially observed true state
+    z[i] ~ dbern(psi[i])           # True occupancy at site Z[i]
+    logit(psi[i]) <- beta0 + beta1 * AWI[i] + beta2 * pet_emerge[i] + beta3 * standingwater[i]
+    for(j in 1:J){              # Loop over replicate surveys
+      # Observation model for actual observations
+      y[i, j] ~ dbern(p.eff[i,j])  # Detection-nondetection at i and j
+      p.eff[i,j] <- z[i] * p[i,j]
+      logit(p[i,j]) <- alpha0
+    }
+  }
+  # Derived quantities
+  #N.occ <- sum(z[])       # Number of occupied sites among sample of M
+  #psi.fs <- N.occ/M       # Proportion of occupied sites among sample of M
+#  for(k in 1:M){
+ #   logit(psi.pred[k]) <-  beta0 + beta1 * X.AWI[k] + beta2 * X.pet_emerge[k] + beta3 * X.standingwater[k] # Psi
+ #   logit(p.pred[k]) <- alpha0
+#  }
+}
+```"
