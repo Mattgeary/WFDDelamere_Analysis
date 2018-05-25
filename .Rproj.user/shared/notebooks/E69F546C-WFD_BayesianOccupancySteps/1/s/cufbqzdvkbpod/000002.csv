@@ -1,4 +1,0 @@
-"0","```r
-zst <- apply(WFD.occu.mat, 1, max, na.rm = TRUE)
-inits <- function(){list(z = zst, mean.psi = runif(1), beta1 = runif(1), beta2 = runif(1), beta3 = runif(1))}
-```"

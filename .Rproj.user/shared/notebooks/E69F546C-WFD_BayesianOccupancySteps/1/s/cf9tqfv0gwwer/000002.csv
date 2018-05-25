@@ -1,4 +1,0 @@
-"0","```r
-WFD.occu.b <- R2jags::jags(WFD.cov.jags.dat, inits, params, model.file = WFD.site.jg, n.chains = nc, n.thin = nt, n.iter = ni, n.burnin = nb)
-print(WFD.occu.b, dig = 3)
-```"
