@@ -1,4 +1,0 @@
-"0","```r
-WFD.state.occu.b <- R2jags::jags(WFD.state.jags.dat, inits, params, WFD.multistate.jg, n.chains = nc, n.thin = nt, n.iter = ni, n.burnin = nb)
-print(WFD.state.occu.b, dig= 2)
-```"

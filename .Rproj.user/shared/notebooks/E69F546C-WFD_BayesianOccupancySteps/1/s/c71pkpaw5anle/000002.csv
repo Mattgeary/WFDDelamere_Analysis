@@ -1,7 +1,0 @@
-"0","```r
-obsCovs(WFD.UMF) <- scale(obsCovs(WFD.UMF))
-oC.scale <- scale(obsCovs(WFD.UMF))
-
-siteCovs(WFD.UMF) <- scale(siteCovs(WFD.UMF))
-sC.scale <- scale(siteCovs(WFD.UMF))
-```"

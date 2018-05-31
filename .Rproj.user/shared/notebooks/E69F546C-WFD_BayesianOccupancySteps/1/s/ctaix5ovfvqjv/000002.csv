@@ -1,4 +1,0 @@
-"0","```r
-WFD.state.cov.prior.occu.b <- R2jags::jags(WFD.multistate.cov.prior.jags.dat, inits, params, WFD.multistate.cov.prior.jg, n.chains = nc, n.thin = nt, n.iter = ni, n.burnin = nb)
-print(WFD.state.cov.prior.occu.b, dig= 2)
-```"
